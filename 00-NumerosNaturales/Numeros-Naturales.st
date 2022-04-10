@@ -30,7 +30,7 @@ I class
 ! !
 
 
-!I class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 18:46:39'!
+!I class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 19:23:55'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
@@ -51,18 +51,13 @@ DenotativeObject subclass: #II
 II class
 	instanceVariableNames: 'next previous'!
 
-!II class methodsFor: 'previous and next'!
-! !
+!II class methodsFor: 'previous and next' stamp: 'NP 4/10/2022 19:23:39'!
+nameOfNext
 
-!II class methodsFor: 'previous and next'!
-! !
-
-!II class methodsFor: 'previous and next' stamp: 'NP 4/10/2022 18:46:11'!
-next
-	next ifNotNil: [ ^ next ].
-	next _ II createChildNamed: self nameOfNext.
-	next previous: self.
-	^ next.! !
+	(self name endsWith: 'VIII') ifTrue:[^(self name withoutSuffix: 'VIII'), 'IX'].
+	(self name endsWith: 'IV') ifTrue:[^(self name withoutSuffix: 'IV'), 'V'].
+	(self name endsWith: 'III') ifTrue:[^(self name withoutSuffix: 'III'), 'IV'].
+	^ self name, 'I'! !
 
 !II class methodsFor: 'previous and next'!
 ! !
@@ -76,21 +71,27 @@ next
 !II class methodsFor: 'previous and next'!
 ! !
 
+!II class methodsFor: 'previous and next'!
+! !
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 18:42:44'!
+!II class methodsFor: 'previous and next'!
+! !
+
+
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:22:53'!
 * multiplicando
 
 	^previous * multiplicando + multiplicando! !
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 18:42:51'!
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:23:02'!
 + sumando
 	^ previous + sumando next.! !
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 18:43:04'!
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:23:17'!
 - sustraendo
 	^ sustraendo sustraeDe: self.! !
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 18:43:14'!
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:23:10'!
 / dividendo
 	dividendo = self ifTrue: [ ^ I ].
 	dividendo = I ifTrue: [ ^ self ].
@@ -103,7 +104,7 @@ next
 ! !
 
 
-!II class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 18:46:39'!
+!II class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 19:23:55'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
