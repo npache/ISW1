@@ -30,7 +30,7 @@ I class
 ! !
 
 
-!I class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 19:23:55'!
+!I class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 19:34:53'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
@@ -51,13 +51,8 @@ DenotativeObject subclass: #II
 II class
 	instanceVariableNames: 'next previous'!
 
-!II class methodsFor: 'previous and next' stamp: 'NP 4/10/2022 19:23:39'!
-nameOfNext
-
-	(self name endsWith: 'VIII') ifTrue:[^(self name withoutSuffix: 'VIII'), 'IX'].
-	(self name endsWith: 'IV') ifTrue:[^(self name withoutSuffix: 'IV'), 'V'].
-	(self name endsWith: 'III') ifTrue:[^(self name withoutSuffix: 'III'), 'IV'].
-	^ self name, 'I'! !
+!II class methodsFor: 'previous and next'!
+ileout/in **--' stamp: 'NP 4/10/2022 19:34:53' overrides: 50447471! !
 
 !II class methodsFor: 'previous and next'!
 ! !
@@ -78,20 +73,19 @@ nameOfNext
 ! !
 
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:22:53'!
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:33:41'!
 * multiplicando
+	^ previous * multiplicando + multiplicando.! !
 
-	^previous * multiplicando + multiplicando! !
-
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:23:02'!
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:33:48'!
 + sumando
 	^ previous + sumando next.! !
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:23:17'!
-- sustraendo
-	^ sustraendo sustraeDe: self.! !
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:33:56'!
+- substraendo
+	^ substraendo sustraeDe: self.! !
 
-!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:23:10'!
+!II class methodsFor: 'operaciones' stamp: 'NP 4/10/2022 19:34:14'!
 / dividendo
 	dividendo = self ifTrue: [ ^ I ].
 	dividendo = I ifTrue: [ ^ self ].
@@ -104,7 +98,7 @@ nameOfNext
 ! !
 
 
-!II class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 19:23:55'!
+!II class methodsFor: '--** private fileout/in **--' stamp: 'NP 4/10/2022 19:34:53'!
 initializeCollaboratorsFromFile
 	"Auto generated method for loading purposes - Do not modify it"
 
